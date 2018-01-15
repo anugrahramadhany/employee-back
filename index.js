@@ -89,8 +89,13 @@ app.post("/login", (req, res) => {
     }
 })
 
+app.get("/",(req,res)=>{
+    res.send("ready !!")
+})
+
+
 app.use("/api/employee", employeeRoutes(passport))
 app.use("/api/user", userRoutes(passport))
 
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
