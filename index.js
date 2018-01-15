@@ -64,7 +64,7 @@ passport.use("auth", new BearerStrategy((token, done) => {
     })
 }))
 
-app.use("/api/validatetoken", passport.authenticate("auth", { session: false }),(req,res)=>{
+app.use("/api/validatetoken", passport.authenticate("auth", { session: false }), (req, res) => {
     res.send(req.user)
 })
 
@@ -89,7 +89,7 @@ app.post("/login", (req, res) => {
     }
 })
 
-app.get("/",(req,res)=>{
+app.get("/", (req, res) => {
     res.send("ready !!")
 })
 
